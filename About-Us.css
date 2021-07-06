@@ -1,5 +1,5 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 1823px;
+  min-height: 1773px;
 }
 
 .u-section-1 .u-list-1 {
@@ -21,7 +21,7 @@
   width: 240px;
   height: 240px;
   background-image: url("images/agustin.png");
-  background-position: 50% 50%;
+  background-position: 50% 77.5%;
   margin: 30px auto 0;
 }
 
@@ -58,7 +58,7 @@
   width: 240px;
   height: 240px;
   background-image: url("images/roma.jpg");
-  background-position: 50% 50%;
+  background-position: 50% 45%;
   margin: 30px auto 0;
 }
 
@@ -95,7 +95,7 @@
   width: 240px;
   height: 240px;
   background-image: url("images/pedro.jpg");
-  background-position: 50% 50%;
+  background-position: 50% 76.25%;
   margin: 30px auto 0;
 }
 
@@ -166,7 +166,7 @@
   height: 55px;
   width: 55px;
   background-image: none;
-  margin: -55px auto 60px 162px;
+  margin: -55px auto 50px 162px;
 }
 
 @media (max-width: 1199px) {
@@ -261,7 +261,7 @@
 
   .u-section-1 .u-icon-3 {
     margin-top: 0;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 }
 
@@ -412,8 +412,8 @@
 .u-section-2 .u-image-2 {
   width: 240px;
   height: 240px;
-  background-image: url("images/guido.jpg");
-  background-position: 50% 50%;
+  background-image: url("images/gasti.jpg");
+  background-position: 50% 65%;
   margin: 20px auto 0;
 }
 
@@ -447,8 +447,8 @@
 .u-section-2 .u-image-3 {
   width: 240px;
   height: 240px;
-  background-image: url("images/gasti.jpg");
-  background-position: 50% 50%;
+  background-image: url("images/osvaldo.png");
+  background-position: 50% 10%;
   margin: 20px auto 0;
 }
 
@@ -482,8 +482,8 @@
 .u-section-2 .u-image-4 {
   width: 240px;
   height: 240px;
-  background-image: url("images/osvaldo.png");
-  background-position: 50% 50%;
+  background-image: url("images/guido.jpg");
+  background-position: 50% 25%;
   margin: 20px auto 0;
 }
 
@@ -518,7 +518,7 @@
   width: 240px;
   height: 240px;
   background-image: url("images/aky.png");
-  background-position: 50% 50%;
+  background-position: 50% 98.75%;
   margin: 20px auto 0;
 }
 
@@ -553,7 +553,7 @@
   width: 240px;
   height: 240px;
   background-image: url("images/fabri1.jpg");
-  background-position: 50% 50%;
+  background-position: 50% 15%;
   margin: 20px auto 0;
 }
 
