@@ -15,8 +15,10 @@
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 3.18.2, nicepage.com">
 
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Proza+Libre:400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-theme-google-font" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Proza+Libre:400,400i,500,500i,600,600i,700,700i,800,800i">
 
 
 
@@ -39,55 +41,102 @@
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
-        (function() {
+        (function () {
             // https://dashboard.emailjs.com/admin/integration
             emailjs.init('user_UywUZksExoJWI5Y1WGWJt');
         })();
     </script>
     <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
+        // Get the <span> element that closes the modal
+        //const span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        // span.onclick = function () {
+        //modal.style.display = "none";
+        // }
+
+        // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function (event) {
+        // if (event.target == modal) {
+        // modal.style.display = "none";
+        // }
+        // }
+        
+        const displayModal = (modal) => {
+            modal.style.display = "block";
+        }
+        const hideModal = () => {
+            const modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
                 event.preventDefault();
                 // generate a five digit number for the contact_number variable
                 //this.contact_number.value = Math.random() * 100000 | 0;
                 // these IDs from the previous steps
                 emailjs.sendForm('service_cu49g3p', 'template_ac3ydds', this)
-                    .then(function() {
-                        console.log('SUCCESS!');
-                    }, function(error) {
-                        console.log('FAILED...', error);
+                    .then(result => {
+                        const modal = document.getElementById("myModal");
+                        console.log(result)
+                        displayModal(modal)
+                       // alert('The message has been sent successfully!')
+                    }).catch(error => {
+                        alert(error.message)
                     });
+
             });
         }
+        
     </script>
 
 
 </head>
 
-<body class="u-body u-image u-overlap" style="background-position: 50% 50%; background-attachment: fixed; background-image: url(&quot;images/2-011.png&quot;);">
+<body class="u-body u-image u-overlap"
+    style="background-position: 50% 50%; background-attachment: fixed; background-image: url(&quot;images/2-011.png&quot;);">
     <header class="u-clearfix u-header" id="sec-ce8c">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <a href="Talios-Factory-Tech.html" data-page-id="965728789" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
+            <a href="Talios-Factory-Tech.html" data-page-id="965728789" class="u-image u-logo u-image-1"
+                data-image-width="500" data-image-height="500" title="Home">
                 <img src="images/logoTFT500px-01.png" class="u-logo-image u-logo-image-1" data-image-width="101.4318">
             </a>
-            <h1 class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-hidden-sm u-hidden-xs u-text u-text-body-alt-color u-title u-text-1">talios factory tech</h1>
+            <h1
+                class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-hidden-sm u-hidden-xs u-text u-text-body-alt-color u-title u-text-1">
+                talios factory tech</h1>
             <nav class="u-menu u-menu-dropdown u-offcanvas u-offcanvas-shift u-menu-1">
-                <div class="menu-collapse u-custom-font" style="font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; font-family: &quot;Proza Libre&quot;; font-weight: 400;">
+                <div class="menu-collapse u-custom-font"
+                    style="font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Proza Libre' ; font-weight: 400;">
                     <a class="u-button-style u-custom-active-border-color u-custom-active-color u-custom-border u-custom-border-color u-custom-borders u-custom-hover-border-color u-custom-hover-color u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-text-active-color u-custom-text-color u-custom-text-hover-color u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-custom-color-4 u-text-hover-palette-2-base"
                         href="#">
-                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;"><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</symbol>
-</defs></svg>
+                        <svg>
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+                        </svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                                    <rect y="1" width="16" height="2"></rect>
+                                    <rect y="7" width="16" height="2"></rect>
+                                    <rect y="13" width="16" height="2"></rect>
+                                </symbol>
+                            </defs>
+                        </svg>
                     </a>
                 </div>
                 <div class="u-custom-menu u-nav-container">
                     <ul class="u-custom-font u-nav u-spacing-30 u-unstyled u-nav-1">
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-4 u-text-body-alt-color u-text-hover-custom-color-2" href="Talios-Factory-Tech.html" style="padding: 10px 0px;">Home</a>
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-custom-color-4 u-text-body-alt-color u-text-hover-custom-color-2"
+                                href="Talios-Factory-Tech.html" style="padding: 10px 0px;">Home</a>
                         </li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-4 u-text-body-alt-color u-text-hover-custom-color-2" href="About-Us.html" style="padding: 10px 0px;">About Us</a>
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-custom-color-4 u-text-body-alt-color u-text-hover-custom-color-2"
+                                href="About-Us.html" style="padding: 10px 0px;">About Us</a>
                         </li>
-                        <li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-custom-color-4 u-text-body-alt-color u-text-hover-custom-color-2" href="Contact.html" style="padding: 10px 0px;">Contact</a>
+                        <li class="u-nav-item"><a
+                                class="u-button-style u-nav-link u-text-active-custom-color-4 u-text-body-alt-color u-text-hover-custom-color-2"
+                                href="Contact.html" style="padding: 10px 0px;">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -96,11 +145,14 @@
                         <div class="u-sidenav-overflow">
                             <div class="u-menu-close"></div>
                             <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Talios-Factory-Tech.html" style="padding: 10px 0px;">Home</a>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                                        href="Talios-Factory-Tech.html" style="padding: 10px 0px;">Home</a>
                                 </li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About-Us.html" style="padding: 10px 0px;">About Us</a>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="About-Us.html"
+                                        style="padding: 10px 0px;">About Us</a>
                                 </li>
-                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html" style="padding: 10px 0px;">Contact</a>
+                                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html"
+                                        style="padding: 10px 0px;">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -110,9 +162,22 @@
             </nav>
         </div>
     </header>
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <a onclick="hideModal()">
+            <span class="close">OK</span>
+            </a>
+            <p>The message has been sent successfully!</p>
+        </div>
+
+    </div>
     <section class="u-align-center u-clearfix u-section-1" id="sec-24fa">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <h1 class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-hidden-lg u-hidden-md u-hidden-sm u-hidden-xs u-text u-text-custom-color-6 u-title u-text-1">talios factory tech</h1>
+            <h1
+                class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-hidden-lg u-hidden-md u-hidden-sm u-hidden-xs u-text u-text-custom-color-6 u-title u-text-1">
+                talios factory tech</h1>
             <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-2">Contact Form<br>
             </h2>
             <h2 class="u-align-center u-custom-font u-text u-text-grey-50 u-text-3">
@@ -120,54 +185,101 @@
                 <br>
             </h2>
             <div class="u-align-center u-form u-form-1">
-                <form action="#" method="POST" class="u-clearfix u-form-spacing-8 u-form-vertical u-inner-form" style="padding: 9px;" source="contact7" name="contact-form" id="contact-form">
+                <form action="#" method="POST" class="u-clearfix u-form-spacing-8 u-form-vertical u-inner-form"
+                    style="padding: 9px;" source="contact7" name="contact-form" id="contact-form">
                     <div class="u-form-group u-form-name">
-                        <label for="name-da97" class="u-custom-font u-form-control-hidden u-label u-text-body-alt-color u-label-1"></label>
-                        <input type="text" placeholder="Enter your Name" id="name-da97" name="from_name" class="u-grey-90 u-input u-input-rectangle" required="">
+                        <label for="name-da97"
+                            class="u-custom-font u-form-control-hidden u-label u-text-body-alt-color u-label-1"></label>
+                        <input type="text" placeholder="Enter your Name" id="name-da97" name="from_name"
+                            class="u-grey-90 u-input u-input-rectangle" required="">
                     </div>
                     <div class="u-form-email u-form-group">
-                        <label for="email-da97" class="u-custom-font u-form-control-hidden u-label u-text-body-alt-color u-label-2">Email</label>
-                        <input type="email" placeholder="Enter a valid email address" id="email-da97" name="from_email" class="u-grey-90 u-input u-input-rectangle" required="">
+                        <label for="email-da97"
+                            class="u-custom-font u-form-control-hidden u-label u-text-body-alt-color u-label-2">Email</label>
+                        <input type="email" placeholder="Enter a valid email address" id="email-da97" name="from_email"
+                            class="u-grey-90 u-input u-input-rectangle" required="">
                     </div>
                     <div class="u-form-group u-form-message">
-                        <label for="message-da97" class="u-custom-font u-form-control-hidden u-label u-text-body-alt-color u-label-3">Message</label>
-                        <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-grey-90 u-input u-input-rectangle" required=""></textarea>
+                        <label for="message-da97"
+                            class="u-custom-font u-form-control-hidden u-label u-text-body-alt-color u-label-3">Message</label>
+                        <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message"
+                            class="u-grey-90 u-input u-input-rectangle" required=""></textarea>
                     </div>
                     <div class="u-form-agree u-form-group u-form-group-4">
                         <input type="checkbox" id="agree-bf83" name="agree" class="u-agree-checkbox" required="">
-                        <label for="agree-bf83" class="u-custom-font u-label u-text-body-alt-color u-label-4">Agree <a href="#">Terms and Conditions</a>
-              </label>
+                        <label for="agree-bf83" class="u-custom-font u-label u-text-body-alt-color u-label-4">Agree <a
+                                href="#">Terms and Conditions</a>
+                        </label>
                     </div>
                     <div class="u-align-center u-form-group u-form-submit">
-                        <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-grey-80 u-hover-black u-radius-25 u-text-grey-15 u-text-hover-white u-btn-1">Submit</a>
+                        <a href="#"
+                            class="u-btn u-btn-round u-btn-submit u-button-style u-grey-80 u-hover-black u-radius-25 u-text-grey-15 u-text-hover-white u-btn-1">Submit</a>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
                     <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                    <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                    <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors
+                        then try again. </div>
                     <input type="hidden" value="" name="recaptchaResponse">
                 </form>
             </div>
             <div class="u-container-style u-expanded-width u-group u-group-1">
                 <div class="u-container-layout u-container-layout-1">
                     <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-4">Where we are?</h2>
-                    <div class="u-align-center-md u-align-center-sm u-align-center-xs u-expanded-width-sm u-expanded-width-xs u-grey-light-2 u-map u-map-1">
+                    <div
+                        class="u-align-center-md u-align-center-sm u-align-center-xs u-expanded-width-sm u-expanded-width-xs u-grey-light-2 u-map u-map-1">
                         <div class="embed-responsive">
-                            <iframe class="embed-responsive-item" src="//maps.google.com/maps?output=embed&amp;q=Luis%20monteverde%20438%20castelar&amp;z=10&amp;t=m" data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWFkZHJlc3MlMjIlMkMlMjJhZGRyZXNzJTIyJTNBJTIyTHVpcyUyMG1vbnRldmVyZGUlMjA0MzglMjBjYXN0ZWxhciUyMiUyQyUyMnpvb20lMjIlM0ExMCUyQyUyMnR5cGVJZCUyMiUzQSUyMnJvYWQlMjIlMkMlMjJsYW5nJTIyJTNBbnVsbCUyQyUyMmFwaUtleSUyMiUzQW51bGwlMkMlMjJtYXJrZXJzJTIyJTNBJTVCJTVEJTdE"></iframe>
+                            <iframe class="embed-responsive-item"
+                                src="//maps.google.com/maps?output=embed&amp;q=Luis%20monteverde%20438%20castelar&amp;z=10&amp;t=m"
+                                data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWFkZHJlc3MlMjIlMkMlMjJhZGRyZXNzJTIyJTNBJTIyTHVpcyUyMG1vbnRldmVyZGUlMjA0MzglMjBjYXN0ZWxhciUyMiUyQyUyMnpvb20lMjIlM0ExMCUyQyUyMnR5cGVJZCUyMiUzQSUyMnJvYWQlMjIlMkMlMjJsYW5nJTIyJTNBbnVsbCUyQyUyMmFwaUtleSUyMiUzQW51bGwlMkMlMjJtYXJrZXJzJTIyJTNBJTVCJTVEJTdE"></iframe>
                         </div>
                     </div>
-                    <p class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-5"><span class="u-icon u-icon-1" data-href="https://www.google.com/maps/@-34.6524393,-58.6391131,3a,75y,98.69h,109.4t/data=!3m6!1e1!3m4!1sNJgmqWaCEra3EFNyIw_hHQ!2e0!7i13312!8i6656" data-target="_blank"><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px" style="width: 1em; height: 1em;"><g><g><path d="M256,0C156.748,0,76,80.748,76,180c0,33.534,9.289,66.26,26.869,94.652l142.885,230.257    c2.737,4.411,7.559,7.091,12.745,7.091c0.04,0,0.079,0,0.119,0c5.231-0.041,10.063-2.804,12.75-7.292L410.611,272.22    C427.221,244.428,436,212.539,436,180C436,80.748,355.252,0,256,0z M384.866,256.818L258.272,468.186l-129.905-209.34    C113.734,235.214,105.8,207.95,105.8,180c0-82.71,67.49-150.2,150.2-150.2S406.1,97.29,406.1,180    C406.1,207.121,398.689,233.688,384.866,256.818z"></path>
-</g>
-</g><g><g><path d="M256,90c-49.626,0-90,40.374-90,90c0,49.309,39.717,90,90,90c50.903,0,90-41.233,90-90C346,130.374,305.626,90,256,90z     M256,240.2c-33.257,0-60.2-27.033-60.2-60.2c0-33.084,27.116-60.2,60.2-60.2s60.1,27.116,60.1,60.2    C316.1,212.683,289.784,240.2,256,240.2z"></path>
-</g>
-</g></svg><img></span>&nbsp;Gdor. Luis Monteverde 438, B1712JCH Castelar, Bs As.<br>
+                    <p class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-5"><span
+                            class="u-icon u-icon-1"
+                            data-href="https://www.google.com/maps/@-34.6524393,-58.6391131,3a,75y,98.69h,109.4t/data=!3m6!1e1!3m4!1sNJgmqWaCEra3EFNyIw_hHQ!2e0!7i13312!8i6656"
+                            data-target="_blank"><svg class="u-svg-content" viewBox="0 0 512 512" x="0px" y="0px"
+                                style="width: 1em; height: 1em;">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M256,0C156.748,0,76,80.748,76,180c0,33.534,9.289,66.26,26.869,94.652l142.885,230.257    c2.737,4.411,7.559,7.091,12.745,7.091c0.04,0,0.079,0,0.119,0c5.231-0.041,10.063-2.804,12.75-7.292L410.611,272.22    C427.221,244.428,436,212.539,436,180C436,80.748,355.252,0,256,0z M384.866,256.818L258.272,468.186l-129.905-209.34    C113.734,235.214,105.8,207.95,105.8,180c0-82.71,67.49-150.2,150.2-150.2S406.1,97.29,406.1,180    C406.1,207.121,398.689,233.688,384.866,256.818z">
+                                        </path>
+                                    </g>
+                                </g>
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M256,90c-49.626,0-90,40.374-90,90c0,49.309,39.717,90,90,90c50.903,0,90-41.233,90-90C346,130.374,305.626,90,256,90z     M256,240.2c-33.257,0-60.2-27.033-60.2-60.2c0-33.084,27.116-60.2,60.2-60.2s60.1,27.116,60.1,60.2    C316.1,212.683,289.784,240.2,256,240.2z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg><img></span>&nbsp;Gdor. Luis Monteverde 438, B1712JCH Castelar, Bs As.<br>
                     </p>
-                    <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-6">Follow Us</h2><span class="u-icon u-icon-circle u-text-white u-icon-2" data-href="https://www.instagram.com/tft.js/" data-target="_blank"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e9e1"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-e9e1"><path d="m392 512h-272c-66.168 0-120-53.832-120-120v-272c0-66.168 53.832-120 120-120h272c66.168 0 120 53.832 120 120v272c0 66.168-53.832 120-120 120zm-272-472c-44.112 0-80 35.888-80 80v272c0 44.112 35.888 80 80 80h272c44.112 0 80-35.888 80-80v-272c0-44.112-35.888-80-80-80zm277 50c-13.807 0-25 11.193-25 25 0 13.807 11.193 25 25 25 13.807 0 25-11.193 25-25 0-13.807-11.193-25-25-25zm-141 296c-71.683 0-130-58.317-130-130 7.14-172.463 252.886-172.413 260 .001 0 71.682-58.317 129.999-130 129.999zm0-220c-49.626 0-90 40.374-90 90 4.944 119.397 175.074 119.362 180-.001 0-49.625-40.374-89.999-90-89.999z"></path></svg></span>
+                    <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-6">Follow Us</h2><span
+                        class="u-icon u-icon-circle u-text-white u-icon-2" data-href="https://www.instagram.com/tft.js/"
+                        data-target="_blank"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                            viewBox="0 0 512 512" style="">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e9e1"></use>
+                        </svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-e9e1">
+                            <path
+                                d="m392 512h-272c-66.168 0-120-53.832-120-120v-272c0-66.168 53.832-120 120-120h272c66.168 0 120 53.832 120 120v272c0 66.168-53.832 120-120 120zm-272-472c-44.112 0-80 35.888-80 80v272c0 44.112 35.888 80 80 80h272c44.112 0 80-35.888 80-80v-272c0-44.112-35.888-80-80-80zm277 50c-13.807 0-25 11.193-25 25 0 13.807 11.193 25 25 25 13.807 0 25-11.193 25-25 0-13.807-11.193-25-25-25zm-141 296c-71.683 0-130-58.317-130-130 7.14-172.463 252.886-172.413 260 .001 0 71.682-58.317 129.999-130 129.999zm0-220c-49.626 0-90 40.374-90 90 4.944 119.397 175.074 119.362 180-.001 0-49.625-40.374-89.999-90-89.999z">
+                            </path>
+                        </svg></span>
                     <div class="u-align-center u-social-icons u-spacing-20 u-social-icons-1">
-                        <a class="u-social-url" target="_blank" href="https://www.linkedin.com/company/talios-factory-tech/" title="Linkedin"><span class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-528f"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-528f"><path d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm-74.390625 387h-62.347656v-187.574219h62.347656zm-31.171875-213.1875h-.40625c-20.921875 0-34.453125-14.402344-34.453125-32.402344 0-18.40625 13.945313-32.410156 35.273437-32.410156 21.328126 0 34.453126 14.003906 34.859376 32.410156 0 18-13.53125 32.402344-35.273438 32.402344zm255.984375 213.1875h-62.339844v-100.347656c0-25.21875-9.027343-42.417969-31.585937-42.417969-17.222656 0-27.480469 11.601563-31.988282 22.800781-1.648437 4.007813-2.050781 9.609375-2.050781 15.214844v104.75h-62.34375s.816407-169.976562 0-187.574219h62.34375v26.558594c8.285157-12.78125 23.109375-30.960937 56.1875-30.960937 41.019531 0 71.777344 26.808593 71.777344 84.421874zm0 0"></path></svg>
-                        
-                        
-                      </span>
-              </a>
+                        <a class="u-social-url" target="_blank"
+                            href="https://www.linkedin.com/company/talios-factory-tech/" title="Linkedin"><span
+                                class="u-icon u-icon-circle u-social-facebook u-social-icon u-icon-3"><svg
+                                    class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512"
+                                    style="">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-528f"></use>
+                                </svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-528f">
+                                    <path
+                                        d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm-74.390625 387h-62.347656v-187.574219h62.347656zm-31.171875-213.1875h-.40625c-20.921875 0-34.453125-14.402344-34.453125-32.402344 0-18.40625 13.945313-32.410156 35.273437-32.410156 21.328126 0 34.453126 14.003906 34.859376 32.410156 0 18-13.53125 32.402344-35.273438 32.402344zm255.984375 213.1875h-62.339844v-100.347656c0-25.21875-9.027343-42.417969-31.585937-42.417969-17.222656 0-27.480469 11.601563-31.988282 22.800781-1.648437 4.007813-2.050781 9.609375-2.050781 15.214844v104.75h-62.34375s.816407-169.976562 0-187.574219h62.34375v26.558594c8.285157-12.78125 23.109375-30.960937 56.1875-30.960937 41.019531 0 71.777344 26.808593 71.777344 84.421874zm0 0">
+                                    </path>
+                                </svg>
+
+
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -179,19 +291,35 @@
 
 
 
-    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-black u-clearfix u-footer u-footer" id="sec-a671">
+    <footer class="u-align-center-md u-align-center-sm u-align-center-xs u-black u-clearfix u-footer u-footer"
+        id="sec-a671">
         <div class="u-clearfix u-sheet u-valign-top-xs u-sheet-1">
-            <a href="Talios-Factory-Tech.html" data-page-id="965728789" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500" title="Home">
+            <a href="Talios-Factory-Tech.html" data-page-id="965728789" class="u-image u-logo u-image-1"
+                data-image-width="500" data-image-height="500" title="Home">
                 <img src="images/logoTFT500px-01.png" class="u-logo-image u-logo-image-1" data-image-width="101.4318">
             </a>
-            <p class="u-align-center u-text u-text-white u-text-1">Ⓒ 2021 Talios Factory Tech LLC. All rights reserved.</p>
+            <p class="u-align-center u-text u-text-white u-text-1">Ⓒ 2021 Talios Factory Tech LLC. All rights reserved.
+            </p>
             <div class="u-list u-list-1">
                 <div class="u-repeater u-repeater-1">
                     <div class="u-align-center-xs u-container-style u-list-item u-repeater-item">
-                        <div class="u-container-layout u-similar-container u-valign-middle-lg u-valign-middle-xl u-container-layout-1">
-                            <div class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-social-icons u-spacing-10 u-social-icons-1">
-                                <a class="u-social-url" target="_blank" title="linkedin tft" href="https://www.linkedin.com/company/talios-factory-tech/"><span class="u-icon u-icon-circle u-social-custom u-social-icon u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512 512" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b8c"></use></svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-9b8c"><path d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm-74.390625 387h-62.347656v-187.574219h62.347656zm-31.171875-213.1875h-.40625c-20.921875 0-34.453125-14.402344-34.453125-32.402344 0-18.40625 13.945313-32.410156 35.273437-32.410156 21.328126 0 34.453126 14.003906 34.859376 32.410156 0 18-13.53125 32.402344-35.273438 32.402344zm255.984375 213.1875h-62.339844v-100.347656c0-25.21875-9.027343-42.417969-31.585937-42.417969-17.222656 0-27.480469 11.601563-31.988282 22.800781-1.648437 4.007813-2.050781 9.609375-2.050781 15.214844v104.75h-62.34375s.816407-169.976562 0-187.574219h62.34375v26.558594c8.285157-12.78125 23.109375-30.960937 56.1875-30.960937 41.019531 0 71.777344 26.808593 71.777344 84.421874zm0 0"></path></svg></span>
-                  </a>
+                        <div
+                            class="u-container-layout u-similar-container u-valign-middle-lg u-valign-middle-xl u-container-layout-1">
+                            <div
+                                class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-social-icons u-spacing-10 u-social-icons-1">
+                                <a class="u-social-url" target="_blank" title="linkedin tft"
+                                    href="https://www.linkedin.com/company/talios-factory-tech/"><span
+                                        class="u-icon u-icon-circle u-social-custom u-social-icon u-icon-1"><svg
+                                            class="u-svg-link" preserveAspectRatio="xMidYMin slice"
+                                            viewBox="0 0 512 512" style="">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9b8c">
+                                            </use>
+                                        </svg><svg class="u-svg-content" viewBox="0 0 512 512" id="svg-9b8c">
+                                            <path
+                                                d="m256 0c-141.363281 0-256 114.636719-256 256s114.636719 256 256 256 256-114.636719 256-256-114.636719-256-256-256zm-74.390625 387h-62.347656v-187.574219h62.347656zm-31.171875-213.1875h-.40625c-20.921875 0-34.453125-14.402344-34.453125-32.402344 0-18.40625 13.945313-32.410156 35.273437-32.410156 21.328126 0 34.453126 14.003906 34.859376 32.410156 0 18-13.53125 32.402344-35.273438 32.402344zm255.984375 213.1875h-62.339844v-100.347656c0-25.21875-9.027343-42.417969-31.585937-42.417969-17.222656 0-27.480469 11.601563-31.988282 22.800781-1.648437 4.007813-2.050781 9.609375-2.050781 15.214844v104.75h-62.34375s.816407-169.976562 0-187.574219h62.34375v26.558594c8.285157-12.78125 23.109375-30.960937 56.1875-30.960937 41.019531 0 71.777344 26.808593 71.777344 84.421874zm0 0">
+                                            </path>
+                                        </svg></span>
+                                </a>
                             </div>
                         </div>
                     </div>

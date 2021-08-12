@@ -139,6 +139,7 @@
   color: rgb(255, 255, 255) !important;
 }
 
+
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
     min-height: 1435px;
@@ -334,4 +335,65 @@
   font-style: normal;
   font-weight: 400;
   src: url(fonts/NATS-Regular-1.ttf);
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 400px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+   
+  font-family: 'NATS-Regular-1';
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #1a1a2e;
+  margin: auto;
+  padding: 20px;
+  border: 1px ;
+  width: 35%;
+  border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  font-family: 'NATS-Regular-1';
+  letter-spacing: 2px;
+  background-color: #e94560;
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  
+  justify-content: center;
+  
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(199, 198, 198);
+  text-decoration: none;
+  cursor: pointer;
 }
